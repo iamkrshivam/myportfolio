@@ -285,8 +285,7 @@ const Hero = () => {
                 <p className="max-w-xl mx-auto md:mx-0 text-cyan-300/80 mb-8">"I explore cybersecurity, ethical hacking, and pentesting, turning complex challenges into practical solutions while constantly learning and innovating in the digital world."</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <a href="#contact" className="cyber-button">Initiate Contact</a>
-                    {/* FIX: This link requires a 'public' folder at the root of your project containing 'resume.pdf' */}
-                    <a href="/resume.pdf" download="ShivamKumar-Resume.pdf" className="cyber-button-outline">Download CV <DownloadIcon /></a>
+                   
                 </div>
             </div>
             <div className="md:w-2/5 mt-12 md:mt-0">
@@ -320,7 +319,7 @@ const About = () => (
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                     <div className="relative w-full h-full p-1 bg-black rounded-lg">
                      {/* FIX: Using a placeholder. For your image, create a 'public' folder, add 'Shivam.jpg', and set src="/Shivam.jpg" */}
-                     <img src="https://placehold.co/300x300/0a0a0a/00FFFF?text=SK" alt="Shivam Kumar" className="w-full h-full object-cover rounded-md grayscale group-hover:grayscale-0 transition-all duration-500"/>
+                     <img src="/Shivam.jpg" alt="Shivam Kumar" className="w-full h-full object-cover rounded-md grayscale group-hover:grayscale-0 transition-all duration-500"/>
                         <div className="absolute inset-0 bg-cyan-900/30 mix-blend-color group-hover:bg-transparent transition-all duration-500"></div>
                     </div>
                 </div>
