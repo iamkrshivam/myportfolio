@@ -407,7 +407,7 @@ const Experience = () => {
 
     return (
         <div>
-            <SectionTitle title="Professional Experience" number={3} />
+            <SectionTitle title="Experience" number={3} />
             <div className="flex flex-col md:flex-row gap-8">
                 <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible">
                     {jobs.map((job, index) => (
@@ -461,7 +461,7 @@ const Projects = () => {
 
     return (
         <div>
-            <SectionTitle title="Project Showcase" number={4} />
+            <SectionTitle title="Projects" number={4} />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projectsData.map(project => <ProjectCard key={project.title} project={project} />)}
             </div>
