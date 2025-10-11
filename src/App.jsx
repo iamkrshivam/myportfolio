@@ -232,7 +232,7 @@ const MatrixRain = ({ isPlaying, theme }) => {
         };
     }, [isPlaying, theme]); // Rerun effect if theme changes
 
-    return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 opacity-20 dark:opacity-30" />;
+    return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 opacity-50 dark:opacity-60" />;
 };
 
 const Header = () => {
