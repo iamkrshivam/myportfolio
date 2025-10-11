@@ -448,8 +448,8 @@ const Projects = () => {
 
 const Certifications = () => {
     const certificationsData = [
-        { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "introtocybersecurity.pdf" },
-        { name: "Computer Hardware Basics", issuer: " Darbhanga College of Engineering through the Cisco Networking Academy program", link: "hardware.pdf" },
+        { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "/introtocybersecurity.pdf" },
+        { name: "Computer Hardware Basics", issuer: " Darbhanga College of Engineering through the Cisco Networking Academy program", link: "/hardware.pdf" },
         { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "#" },
     ];
     return (
