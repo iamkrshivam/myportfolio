@@ -364,7 +364,7 @@ const SkillCard = ({ category, skills, icon }) => (
             {skills.map(skill => (
                 <div key={skill} className="group relative">
                     <div className="skill-item text-sm">{skill}</div>
-                    <span className="absolute -top-10 left-1/2 -translate-x-1.2 z-10 w-auto p-2 text-xs text-black bg-cyan-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">{skill}</span>
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 z-10 w-auto p-2 text-xs text-black bg-cyan-300 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">{skill}</span>
                 </div>
             ))}
         </div>
