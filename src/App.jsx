@@ -386,9 +386,29 @@ const Skills = () => {
     return (
         <div>
             <SectionTitle title="Skills " number={2} />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Desktop View: Styled cards in a 2-column grid */}
+            <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-8">
                 {skillsData.map((skillSet) => (
                     <SkillCard key={skillSet.category} {...skillSet} />
+                ))}
+            </div>
+
+             {/* Mobile View: Simple list format */}
+            <div className="grid md:hidden grid-cols-1 gap-8">
+                {skillsData.map((skillSet) => (
+                     <div key={skillSet.category}>
+                        <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                           <span className="text-cyan-400">{skillSet.icon}</span>
+                           {skillSet.category}
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                           {skillSet.skills.map(skill => (
+                              <span key={skill} className="bg-cyan-900/50 text-cyan-300 text-sm px-3 py-1 rounded-full">
+                                 {skill}
+                              </span>
+                           ))}
+                        </div>
+                     </div>
                 ))}
             </div>
         </div>
