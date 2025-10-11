@@ -73,6 +73,10 @@ export default function App() {
   return (
     <>
       <style>{`
+        html, body {
+          overflow-x: hidden;
+          width: 100%;
+        }
         :root { --cyan: 187, 100%, 50%; --dark-bg: #0a0a0a; }
         .selection\\:bg-cyan-300::selection { background-color: hsl(var(--cyan), 0.7); color: var(--dark-bg); }
         .bg-grid-pattern { background-image: linear-gradient(hsl(var(--cyan), 0.1) 1px, transparent 1px), linear-gradient(to right, hsl(var(--cyan), 0.1) 1px, transparent 1px); background-size: 30px 30px; }
