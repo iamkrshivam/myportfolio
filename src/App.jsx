@@ -276,16 +276,16 @@ const GlitchText = ({ text }) => <div className="glitch-text" data-text={text}>{
 
 const Hero = () => {
     const codeLines = [
-        "// Firing up mission scanner...",
-        "import { mind } for 'next mission';",
-        "class SystemAudit {",
+        "// Starting scanner...",
+        "import { mind } from 'mission';",
+        "class System {",
         "  constructor() {",
-        "    this.target = 'next victim';",
-        "    this.vulnerabilities = [everything];",
+        "    this.target = 'mission';",
+        "    this.tools = ['nmap', 'metasploit'];",
         "  }",
         "  runScan() {",
         "    console.log(`Scanning ${this.target}...`);",
-        "    return 'Next Target Found. Lets' Attack.';",
+        "    return 'Target found. Attacking.';",
         "  }",
         "}",
     ];
@@ -313,7 +313,8 @@ const Hero = () => {
                     <a href="#contact" className="cyber-button">Initiate Contact</a>
                      </div>
             </div>
-            <div className="md:w-2/5 mt-12 md:mt-0">
+            {/* The classes below constrain the width of the code block on mobile for better readability */}
+            <div className="w-full max-w-md mx-auto md:w-2/5 md:max-w-none md:mx-0 mt-12 md:mt-0">
                 <div className="bg-[#0D1117]/80 backdrop-blur-sm border border-cyan-300/20 p-4 rounded-lg shadow-lg shadow-cyan-500/10">
                     <div className="flex space-x-1.5 p-3 bg-gray-800/50 rounded-t-md">
                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
