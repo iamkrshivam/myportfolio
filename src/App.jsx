@@ -97,8 +97,9 @@ export default function App() {
         <Header activeSection={activeSection} scrollToSection={scrollToSection} />
         <SocialLinks />
 
-        <main className="relative z-20 container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
-          <section id="home" ref={sectionRefs.home} className={`min-h-screen flex items-center transition-opacity duration-1000 ${isSectionVisible('home') ? 'opacity-100' : 'opacity-0'}`}>
+      <main className="relative z-20 container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
+          {/* This pt-24 class adds padding to the top on mobile to prevent the fixed header from overlapping the content. It's removed on medium screens (md:pt-0). */}
+          <section id="home" ref={sectionRefs.home} className={`min-h-screen flex items-center pt-24 md:pt-0 transition-opacity duration-1000 ${isSectionVisible('home') ? 'opacity-100' : 'opacity-0'}`}>
             <Hero />
           </section>
           <section id="about" ref={sectionRefs.about} className={getSectionClassName('about')}>
@@ -120,6 +121,7 @@ export default function App() {
             <Contact />
           </section>
         </main>
+        
         
         <Footer />
       </div>
