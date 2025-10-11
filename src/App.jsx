@@ -496,8 +496,8 @@ const Projects = () => {
 
 const Certifications = () => {
     const certificationsData = [
-        { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "https://www.credly.com/badges/e4a4648c-ef48-484c-a460-f8d6e7793c9b" },
-        { name: "Computer Hardware Basics", issuer: " Darbhanga College of Engineering through the Cisco Networking Academy program", link: "https://www.credly.com/badges/8872f6e1-8b3f-4d27-817e-28c36cbe1760" },
+        { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "introtocybersecurity.pdf" },
+        { name: "Computer Hardware Basics", issuer: " Darbhanga College of Engineering through the Cisco Networking Academy program", link: "hardware.pdf" },
         // FIX: This link requires a 'public' folder at the root of your project containing 'Ethical-Hacker-Cert.pdf'
         { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "/Ethical-Hacker-Cert.pdf" }, 
     ];
