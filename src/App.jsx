@@ -24,6 +24,19 @@ export default function App() {
   };
 
   useEffect(() => {
+    // This effect adds a meta tag to the document's head to control the viewport and disable zooming on mobile devices.
+    const meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+    document.head.appendChild(meta);
+
+    // Cleanup function to remove the meta tag when the component unmounts.
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -285,8 +298,7 @@ const Hero = () => {
                 <p className="max-w-xl mx-auto md:mx-0 text-cyan-300/80 mb-8">"I explore cybersecurity, ethical hacking, and pentesting, turning complex challenges into practical solutions while constantly learning and innovating in the digital world."</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <a href="#contact" className="cyber-button">Initiate Contact</a>
-                   
-                </div>
+                     </div>
             </div>
             <div className="md:w-2/5 mt-12 md:mt-0">
                 <div className="bg-[#0D1117]/80 backdrop-blur-sm border border-cyan-300/20 p-4 rounded-lg shadow-lg shadow-cyan-500/10">
@@ -510,4 +522,5 @@ const Contact = () => {
         </div>
     );
 };
+
 
