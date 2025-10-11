@@ -355,7 +355,7 @@ const About = () => (
 );
 
 const SkillCard = ({ category, skills, icon }) => (
-    <div className="border border-cyan-300/10 rounded-lg p-6 bg-black/20 backdrop-blur-sm transform transition-transform hover:-translate-y-2">
+    <div className="border border-cyan-300/10 rounded-lg p-6 bg-black/20 backdrop-blur-sm transition-all duration-300 hover:border-cyan-300/40 hover:shadow-lg hover:shadow-cyan-500/10">
         <div className="flex items-center justify-center gap-4 mb-6">
             <span className="text-cyan-400">{icon}</span>
             <h3 className="text-xl font-bold text-white">{category}</h3>
