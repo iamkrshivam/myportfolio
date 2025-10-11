@@ -519,6 +519,3 @@ const Contact = () => {
 };
 
 
-
-
-export default Root;
