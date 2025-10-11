@@ -345,7 +345,7 @@ const About = () => (
                  <div className="relative w-64 h-64 group">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                     <div className="relative w-full h-full p-1 bg-black rounded-lg">
-                     <img src="/Shivam.jpg" alt="Shivam Kumar" className="w-full h-full object-cover rounded-md transition-all duration-500"/>
+                     <img src="/Shivam.png" alt="Shivam Kumar" className="w-full h-full object-cover rounded-md transition-all duration-500"/>
                         <div className="absolute inset-0 bg-cyan-900/30 mix-blend-color group-hover:bg-transparent transition-all duration-500"></div>
                     </div>
                 </div>
