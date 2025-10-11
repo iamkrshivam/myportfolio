@@ -312,6 +312,8 @@ const Hero = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <a href="#contact" className="cyber-button">Initiate Contact</a>
                      </div>
+                        <div><a href="/resume.pdf"download="Shivam_Resume.pdf"className="px-6 py-3 border border-cyan-500 text-cyan-500 rounded-2xl hover:bg-cyan-500 hover:text-white transition-all duration-200">  Download Resume</a></div>
+
             </div>
             {/* The classes below constrain the width of the code block on mobile for better readability */}
             <div className="w-full max-w-md mx-auto md:w-2/5 md:max-w-none md:mx-0 mt-12 md:mt-0">
