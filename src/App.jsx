@@ -186,7 +186,7 @@ const Header = ({ activeSection, scrollToSection }) => {
     return (
         <header className="fixed top-0 left-0 w-full p-4 md:p-6 z-50 bg-[#0a0a0a]/80 backdrop-blur-lg border-b border-cyan-300/10">
             <div className="container mx-auto flex justify-between items-center">
-                <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="text-2xl font-bold glitch-text" data-text="J.DOE">J.DOE</a>
+                <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="text-2xl font-bold glitch-text" data-text="J.DOE">SK/</a>
                 <nav className="hidden md:flex space-x-8">
                     {navLinks.map((link, index) => (
                         <a key={link} href={`#${link}`} onClick={(e) => { e.preventDefault(); scrollToSection(link); }}
@@ -220,10 +220,9 @@ const Header = ({ activeSection, scrollToSection }) => {
 const SocialLinks = () => (
     <div className="hidden md:flex fixed bottom-0 left-8 flex-col items-center space-y-4 z-40">
         {[
-            { href: "#", icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> },
-            { href: "#", icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> },
-            { href: "#", icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> }
-        ].map((social, i) => (
+            { href: "#", icon: <svg xmlns="https://github.com/iamkrshivam" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> },
+            { href: "#", icon: <svg xmlns="https://www.linkedin.com/in/shivam-kumar-243a39389/" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> },
+            ].map((social, i) => (
             <a key={i} href={social.href} className="p-2 text-cyan-300/60 hover:text-cyan-300 hover:scale-110 transition-all duration-300">{social.icon}</a>
         ))}
         <div className="w-px h-24 bg-cyan-300/30"></div>
@@ -232,8 +231,8 @@ const SocialLinks = () => (
 
 const Footer = () => (
     <footer className="relative z-20 text-center py-8 text-cyan-300/60 text-sm">
-        <p>Designed & Built by John Doe</p>
-        <p>This portfolio is a React application styled with Tailwind CSS.</p>
+        <p>Designed & Built by SHIVAM KUMAR</p>
+        <p>I Hope You Liked It.</p>
     </footer>
 );
 
@@ -250,16 +249,16 @@ const GlitchText = ({ text }) => <div className="glitch-text" data-text={text}>{
 
 const Hero = () => {
     const codeLines = [
-        "// Initializing neural network...",
-        "import { Mind } from 'humanity';",
-        "class Portfolio extends Mind {",
+        "// Firing up mission scanner...",
+        "import { mind } for 'next mission';",
+        "class SystemAudit {",
         "  constructor() {",
-        "    super();",
-        "    this.name = 'John Doe';",
-        "    this.role = 'Cyber Security & ML Analyst';",
+        "    this.target = 'next victim';",
+        "    this.vulnerabilities = [everything];",
         "  }",
-        "  execute() {",
-        "    return 'Building secure, intelligent systems.';",
+        "  runScan() {",
+        "    console.log(`Scanning ${this.target}...`);",
+        "    return 'Next Target Found. Lets' Attack.';",
         "  }",
         "}",
     ];
@@ -280,12 +279,12 @@ const Hero = () => {
         <div className="w-full flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-3/5 text-center md:text-left">
                 <p className="text-lg md:text-xl text-cyan-400 mb-2">Hello, my designation is</p>
-                <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white"><GlitchText text="John Doe" /></h1>
-                <h2 className="text-2xl md:text-3xl text-cyan-300 mb-6">&gt; Cyber Security & ML Analyst</h2>
-                <p className="max-w-xl mx-auto md:mx-0 text-cyan-300/80 mb-8">I build secure and intelligent digital defenses, transforming complex data into threat intelligence and creating resilient systems that protect against modern cyber attacks.</p>
+                <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white"><GlitchText text="SHIVAM KUMAR" /></h1>
+                <h2 className="text-2xl md:text-3xl text-cyan-300 mb-6">&gt; B.Tech CSE (Cybersecurity) Student </h2>
+                <p className="max-w-xl mx-auto md:mx-0 text-cyan-300/80 mb-8">"I explore cybersecurity, ethical hacking, and pentesting, turning complex challenges into practical solutions while constantly learning and innovating in the digital world."</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <a href="#contact" className="cyber-button">Initiate Contact</a>
-                    <a href="/resume.pdf" download="JohnDoe-Resume.pdf" className="cyber-button-outline">Download CV <DownloadIcon /></a>
+                    <a href="/resume.pdf" download="resume.pdf" className="cyber-button-outline">Download CV <DownloadIcon /></a>
                 </div>
             </div>
             <div className="md:w-2/5 mt-12 md:mt-0">
@@ -310,15 +309,15 @@ const About = () => (
         <SectionTitle title="About Me" number={1} />
         <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="md:w-2/3 text-cyan-300/80 space-y-4 text-base leading-relaxed">
-                <p>Hello! I'm John, a passionate Cyber Security Analyst with a deep interest in the intersection of artificial intelligence and digital defense. My journey began with a curiosity for ethical hacking, which has since evolved into a career dedicated to protecting digital infrastructures.</p>
-                <p>I specialize in using machine learning to detect anomalies, predict threats, and automate security responses. I thrive on the challenge of sifting through vast amounts of data to uncover hidden patterns and vulnerabilities. Whether it's developing a threat detection model or hardening a network, I'm driven to build a more secure digital world.</p>
-                <p>Outside of my professional work, I contribute to open-source security tools, participate in CTF competitions, and research the ethical implications of AI in security.</p>
+                <p>I am Shivam Kumar, a B.Tech CSE student specializing in Cybersecurity. Passionate about ethical hacking, network security, and digital forensics, I enjoy exploring the intricacies of how systems work and how to protect them from modern cyber threats.</p>
+                <p>I’m constantly learning new technologies and tools, from programming in C, C++, and Python, to experimenting with Linux, networking, and penetration testing. My goal is to become a proficient ethical hacker and cybersecurity professional, building secure and resilient digital systems that make the digital world safer.</p>
+                <p>Outside of my professional work, I contribute to open-source security tools, participate in CTF competitions, and research to enhance computer security.</p>
             </div>
             <div className="md:w-1/3 flex justify-center items-center">
                  <div className="relative w-64 h-64 group">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                     <div className="relative w-full h-full p-1 bg-black rounded-lg">
-                        <img src="https://placehold.co/300x300/0a0a0a/00FFFF?text=JD" alt="John Doe" className="w-full h-full object-cover rounded-md grayscale group-hover:grayscale-0 transition-all duration-500"/>
+                        <img src="Shivam.jpg" alt="SHIVAM KUMAR" className="w-full h-full object-cover rounded-md grayscale group-hover:grayscale-0 transition-all duration-500"/>
                         <div className="absolute inset-0 bg-cyan-900/30 mix-blend-color group-hover:bg-transparent transition-all duration-500"></div>
                     </div>
                 </div>
@@ -346,15 +345,19 @@ const SkillCard = ({ category, skills, icon }) => (
 
 const Skills = () => {
     const skillsData = [
-        { category: "Languages & Scripting", skills: ["Python", "Bash", "JavaScript", "Go", "SQL"], icon: <CodeIcon /> },
-        { category: "Security Tools", skills: ["Wireshark", "Nmap", "Metasploit", "Burp Suite", "Ghidra"], icon: <ShieldIcon /> },
-        { category: "AI / ML Frameworks", skills: ["TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "Keras"], icon: <BrainIcon /> },
-        { category: "Infrastructure & Cloud", skills: ["AWS", "Docker", "Kubernetes", "Terraform", "CI/CD"], icon: <ServerIcon /> },
+        { category: "Languages & Scripting", skills: ["Python", "Bash","Linux","HTML","CSS","JavaScript", "C", "C++"], icon: <CodeIcon /> },
+        { category: "Security Tools", skills: ["Wireshark", "Nmap", "Metasploit", "Ettercap", "Burp Suite", "Ghidra"], icon: <ShieldIcon /> },
+        { category: "Networking & Protocols", skills: ["TCP/IP", "OSI Model", "IPv4/IPv6", "Network Troubleshooting", "Basic CCNA Concepts"], icon: <BrainIcon /> },
+        { category: "Other Tools & Platforms", skills: ["Git", "GitHub", "VirtualBox", "Termux", "Linux Command Line"], icon: <ServerIcon /> },
+        { category: "Operating System", skills: ["Windows", "Linux (Debian/Parrot/Kali)", "macOS", "Android"], icon: <ServerIcon /> },
+        { category: "Soft Skills", skills: ["Problem Solving", "Analytical Thinking", "Attention to Detail", "Self-Learning", "Curiosity"], icon: <ServerIcon /> },
+       
     ];
+
 
     return (
         <div>
-            <SectionTitle title="Skills Matrix" number={2} />
+            <SectionTitle title="Skills " number={2} />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {skillsData.map((skillSet) => (
                     <SkillCard key={skillSet.category} {...skillSet} />
@@ -367,25 +370,14 @@ const Skills = () => {
 const Experience = () => {
     const jobs = [
         {
-            company: "CyberCorp Inc.",
-            role: "Sr. Security Analyst",
-            duration: "2020 - Present",
+            company: "Darbhanga College of Engeneering",
+            role: "Student",
+            duration: "2024 - Present",
             tasks: [
-                "Led the development of a ML-powered intrusion detection system, reducing false positives by 40%.",
-                "Conducted penetration tests on critical infrastructure, identifying and mitigating high-risk vulnerabilities.",
-                "Automated threat intelligence gathering and reporting using Python scripts and APIs."
+                "Currently Student of B.Tech C.S.E(Cybersecurity)"
             ]
         },
-        {
-            company: "SecureNet Solutions",
-            role: "Security Analyst",
-            duration: "2018 - 2020",
-            tasks: [
-                "Monitored network traffic for suspicious activity and responded to security incidents.",
-                "Developed and maintained security policies and procedures.",
-                "Assisted in security awareness training for employees."
-            ]
-        },
+        
     ];
 
     const [activeTab, setActiveTab] = useState(0);
@@ -439,10 +431,9 @@ const ProjectCard = ({ project }) => (
 
 const Projects = () => {
     const projectsData = [
-        { title: "Sentinel Bot: Anomaly Detection System", description: "A network security tool that uses an Isolation Forest algorithm to detect and flag anomalies in network traffic in real-time, improving threat detection speed by 60%.", tags: ["Cybersecurity", "Scikit-learn", "Python"], link: "#" },
-        { title: "Project Cygnus: Predictive Threat Engine", description: "A real-time predictive engine that uses LSTM networks to forecast potential cybersecurity threats based on global network data, achieving 92% accuracy.", tags: ["Machine Learning", "TensorFlow", "AWS"], link: "#" },
-        { title: "Neuro-Visualizer: Interactive Brainwave Art", description: "An interactive web application that translates EEG data into generative visual art using React and D3.js, creating a unique biometric art piece for each user.", tags: ["React", "D3.js", "Bio-integration"], link: "#" },
-        { title: "Project Chimera: Code Obfuscator", description: "A high-performance command-line tool built with Rust that obfuscates source code, making it significantly more difficult to reverse-engineer.", tags: ["Developer Tool", "Rust", "Security"], link: "#" }
+        { title: "Network Monitor Tool", description: "Created a simple Python tool to monitor network traffic and log unusual activity for practice purposes.", tags: ["Python", "Networking", "Cybersecurity"], link: "#" },
+        { title: "Password Manager", description: "Built a basic password manager to securely store and retrieve passwords using Python and file encryption.", tags: ["Python", "Encryption", "Security"], link: "#" },
+        { title: "Linux Security Script", description: "Developed a small Bash script to automate system updates and apply basic security checks on Linux.", tags: ["Bash", "Linux", "Cybersecurity"], link: "#" }
     ];
 
     return (
@@ -457,10 +448,9 @@ const Projects = () => {
 
 const Certifications = () => {
     const certificationsData = [
-        { name: "Offensive Security Certified Professional (OSCP)", issuer: "Offensive Security", link: "#" },
-        { name: "Certified Information Systems Security Professional (CISSP)", issuer: "ISC²", link: "#" },
-        { name: "AWS Certified Machine Learning - Specialty", issuer: "Amazon Web Services", link: "#" },
-        { name: "GIAC Penetration Tester (GPEN)", issuer: "GIAC Certifications", link: "#" },
+        { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "introtocybersecurity.pdf" },
+        { name: "Computer Hardware Basics", issuer: " Darbhanga College of Engineering through the Cisco Networking Academy program", link: "hardware.pdf" },
+        { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "#" },
     ];
     return (
         <div>
@@ -517,5 +507,4 @@ const Contact = () => {
         </div>
     );
 };
-
 
