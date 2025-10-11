@@ -1,3 +1,4 @@
+import React from 'react';
 const { useState, useEffect, useRef, createContext, useContext, useMemo } = React;
 
 // ---[ ICONS (as inline SVG components) ]---
@@ -518,5 +519,5 @@ const Root = () => (
     </AppProvider>
 );
 
-ReactDOM.render(<Root />, document.getElementById('root'));
 
+export default Root;
