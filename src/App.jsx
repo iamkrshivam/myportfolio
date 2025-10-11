@@ -232,7 +232,9 @@ const MatrixRain = ({ isPlaying, theme }) => {
         };
     }, [isPlaying, theme]); // Rerun effect if theme changes
 
-    return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 opacity-50 dark:opacity-60" />;
+    // The 'opacity-20' and 'dark:opacity-30' classes below control the transparency of the matrix rain effect.
+    // Lower values make the rain "fade" into the background more.
+    return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 opacity-20 dark:opacity-30" />;
 };
 
 const Header = () => {
@@ -495,7 +497,9 @@ function App() {
     const { isMatrixOn, theme } = useContext(AppContext);
     
     return (
-        <div className="text-slate-700 dark:text-slate-300 transition-colors duration-300">
+        // This solid background color is the key to making the text content readable.
+        // It provides a high-contrast base layer behind the semi-transparent matrix animation.
+        <div className="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 transition-colors duration-300">
             <MatrixRain isPlaying={isMatrixOn} theme={theme} />
             <div className="relative z-10">
                 <Header />
