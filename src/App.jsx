@@ -97,7 +97,7 @@ export default function App() {
         <Header activeSection={activeSection} scrollToSection={scrollToSection} />
         <SocialLinks />
 
-      <main className="relative z-20 container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
+        <main className="relative z-20 container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
           {/* This pt-24 class adds padding to the top on mobile to prevent the fixed header from overlapping the content. It's removed on medium screens (md:pt-0). */}
           <section id="home" ref={sectionRefs.home} className={`min-h-screen flex items-center pt-24 md:pt-0 transition-opacity duration-1000 ${isSectionVisible('home') ? 'opacity-100' : 'opacity-0'}`}>
             <Hero />
@@ -121,7 +121,6 @@ export default function App() {
             <Contact />
           </section>
         </main>
-        
         
         <Footer />
       </div>
@@ -222,10 +221,10 @@ const Header = ({ activeSection, scrollToSection }) => {
 const SocialLinks = () => (
     <div className="hidden md:flex fixed bottom-0 left-8 flex-col items-center space-y-4 z-40">
         {[
-            { href: "https://github.com/iamkrshivam", icon: <svg xmlns="https://github.com/iamkrshivam" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> },
-            { href: "https://www.linkedin.com/in/shivam-kumar-243a39389/", icon: <svg xmlns="https://www.linkedin.com/in/shivam-kumar-243a39389/" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> },
+            { href: "https://github.com/iamkrshivam", icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> },
+            { href: "https://www.linkedin.com/in/shivam-kumar-243a39389/", icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> },
             ].map((social, i) => (
-            <a key={i} href={social.href} className="p-2 text-cyan-300/60 hover:text-cyan-300 hover:scale-110 transition-all duration-300">{social.icon}</a>
+            <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="p-2 text-cyan-300/60 hover:text-cyan-300 hover:scale-110 transition-all duration-300">{social.icon}</a>
         ))}
         <div className="w-px h-24 bg-cyan-300/30"></div>
     </div>
@@ -286,7 +285,8 @@ const Hero = () => {
                 <p className="max-w-xl mx-auto md:mx-0 text-cyan-300/80 mb-8">"I explore cybersecurity, ethical hacking, and pentesting, turning complex challenges into practical solutions while constantly learning and innovating in the digital world."</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <a href="#contact" className="cyber-button">Initiate Contact</a>
-                    <a href="/resume.pdf" download="resume.pdf" className="cyber-button-outline">Download CV <DownloadIcon /></a>
+                    {/* FIX: This link requires a 'public' folder at the root of your project containing 'resume.pdf' */}
+                    <a href="/resume.pdf" download="ShivamKumar-Resume.pdf" className="cyber-button-outline">Download CV <DownloadIcon /></a>
                 </div>
             </div>
             <div className="md:w-2/5 mt-12 md:mt-0">
@@ -319,6 +319,7 @@ const About = () => (
                  <div className="relative w-64 h-64 group">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                     <div className="relative w-full h-full p-1 bg-black rounded-lg">
+                     {/* FIX: Using a placeholder. For your image, create a 'public' folder, add 'Shivam.jpg', and set src="/Shivam.jpg" */}
                      <img src="https://placehold.co/300x300/0a0a0a/00FFFF?text=SK" alt="Shivam Kumar" className="w-full h-full object-cover rounded-md grayscale group-hover:grayscale-0 transition-all duration-500"/>
                         <div className="absolute inset-0 bg-cyan-900/30 mix-blend-color group-hover:bg-transparent transition-all duration-500"></div>
                     </div>
@@ -452,7 +453,8 @@ const Certifications = () => {
     const certificationsData = [
         { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "https://www.credly.com/badges/e4a4648c-ef48-484c-a460-f8d6e7793c9b" },
         { name: "Computer Hardware Basics", issuer: " Darbhanga College of Engineering through the Cisco Networking Academy program", link: "https://www.credly.com/badges/8872f6e1-8b3f-4d27-817e-28c36cbe1760" },
-        { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "#" },
+        // FIX: This link requires a 'public' folder at the root of your project containing 'Ethical-Hacker-Cert.pdf'
+        { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "/Ethical-Hacker-Cert.pdf" }, 
     ];
     return (
         <div>
