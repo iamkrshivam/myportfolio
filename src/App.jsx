@@ -345,7 +345,7 @@ const About = () => (
                  <div className="relative w-64 h-64 group">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                     <div className="relative w-full h-full p-1 bg-black rounded-lg">
-                     <img src="/Shivam.png" alt="Shivam Kumar" className="w-full h-full object-cover rounded-md grayscale group-hover:grayscale-0 transition-all duration-500"/>
+                     <img src="/Shivam.jpg" alt="Shivam Kumar" className="w-full h-full object-cover rounded-md transition-all duration-500"/>
                         <div className="absolute inset-0 bg-cyan-900/30 mix-blend-color group-hover:bg-transparent transition-all duration-500"></div>
                     </div>
                 </div>
@@ -496,8 +496,8 @@ const Projects = () => {
 
 const Certifications = () => {
     const certificationsData = [
-        { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "introtocybersecurity.pdf" },
-        { name: "Computer Hardware Basics", issuer: " Darbhanga College of Engineering through the Cisco Networking Academy program", link: "hardware.pdf" },
+        { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "https://www.credly.com/badges/e4a4648c-ef48-484c-a460-f8d6e7793c9b" },
+        { name: "Computer Hardware Basics", issuer: " Darbhanga College of Engineering through the Cisco Networking Academy program", link: "https://www.credly.com/badges/8872f6e1-8b3f-4d27-817e-28c36cbe1760" },
         // FIX: This link requires a 'public' folder at the root of your project containing 'Ethical-Hacker-Cert.pdf'
         { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "/Ethical-Hacker-Cert.pdf" }, 
     ];
@@ -556,4 +556,5 @@ const Contact = () => {
         </div>
     );
 };
+
 
