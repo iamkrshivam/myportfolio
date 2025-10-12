@@ -481,7 +481,7 @@ const Projects = () => {
     const projectsData = [
         { title: "Network Monitor Tool", description: "Created a simple Python tool to monitor network traffic and log unusual activity for practice purposes.", tags: ["Python", "Networking", "Cybersecurity"], link: "https://github.com/iamkrshivam/network-monitor-tool" },
         { title: "Password Manager", description: "Built a basic password manager to securely store and retrieve passwords using Python and file encryption.", tags: ["Python", "Encryption", "Security"], link: "https://github.com/iamkrshivam/my-password-manager" },
-        { title: "Linux Security Script", description: "Developed a small Bash script to automate system updates and apply basic security checks on Linux.", tags: ["Bash", "Linux", "Cybersecurity"], link: "#" }
+        { title: "Linux Security Script", description: "Developed a small Bash script to automate system updates and apply basic security checks on Linux.", tags: ["Bash", "Linux", "Cybersecurity"], link: "https://github.com/iamkrshivam/Linux-Security-Script" }
     ];
 
     return (
