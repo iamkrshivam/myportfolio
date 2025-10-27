@@ -419,7 +419,7 @@ const Experience = () => {
   const jobs = [
     {
       company: "Tata (Forage)",
-      role: "Cybersecurity Analyst – Virtual Job Simulation",
+      role: "Cybersecurity Analyst Intern – Virtual Job Simulation",
       duration: "2025",
       tasks: [
         "Performed vulnerability assessment and incident response exercises",
