@@ -602,4 +602,3 @@ const Contact = () => {
 };
 
 
-this is send message code snipset from my code can you make it like this whoever message on that box then i will get their message on my email
