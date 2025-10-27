@@ -417,16 +417,46 @@ const Skills = () => {
 
 const Experience = () => {
     const jobs = [
-        {
-            company: "Darbhanga College of Engeneering",
-            role: "Student",
-            duration: "2024 - Present",
-            tasks: [
-                "Currently Student of B.Tech C.S.E(Cybersecurity)"
-            ]
-        },
-        
-    ];
+      [
+    {
+        company: "Darbhanga College of Engineering",
+        role: "Student",
+        duration: "2024 - Present",
+        tasks: [
+            "Currently pursuing B.Tech in Computer Science and Engineering (Cybersecurity)"
+        ]
+    },
+    {
+        company: "Tata (Forage)",
+        role: "Cybersecurity Analyst – Virtual Job Simulation",
+        duration: "2025",
+        tasks: [
+            "Performed vulnerability assessment and incident response exercises",
+            "Practiced identity and access management and network monitoring tasks",
+            "Gained insight into real-world cybersecurity operations"
+        ]
+    },
+    {
+        company: "Mastercard (Forage)",
+        role: "Cybersecurity Analyst Intern – Virtual Job Simulation",
+        duration: "2025",
+        tasks: [
+            "Simulated SOC operations and cyber incident handling",
+            "Conducted vulnerability management and access control analysis",
+            "Worked on digital risk assessment and mitigation strategies"
+        ]
+    },
+    {
+        company: "AIG (Forage)",
+        role: "Cybersecurity Intern – Virtual Job Simulation",
+        duration: "2025",
+        tasks: [
+            "Supported digital security operations and cyber risk management activities",
+            "Applied practical cybersecurity concepts to simulated environments"
+        ]
+    }
+]
+
 
     const [activeTab, setActiveTab] = useState(0);
 
