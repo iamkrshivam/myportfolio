@@ -568,61 +568,35 @@ const Certifications = () => {
 
 const Contact = () => {
     const [status, setStatus] = useState('');
-    const form = useRef(); // Create a ref for the form element
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setStatus('Sending...');
-
-        // --- Replace with your EmailJS credentials ---
-        const SERVICE_ID = 'YOUR_SERVICE_ID';
-        const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-        const USER_ID_OR_PUBLIC_KEY = 'YOUR_USER_ID_OR_PUBLIC_KEY';
-        // -------------------------------------------
-
-        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, USER_ID_OR_PUBLIC_KEY)
-            .then((result) => {
-                console.log(result.text);
-                setStatus('Signal received! I will be in touch.');
-                form.current.reset(); // Use form.current.reset()
-                setTimeout(() => setStatus(''), 5000);
-            }, (error) => {
-                console.log(error.text);
-                setStatus('Error: Could not send signal. Please try again.');
-                setTimeout(() => setStatus(''), 5000);
-            });
+        // Mock sending form
+        setTimeout(() => {
+            setStatus('Signal received! I will be in touch.');
+            e.target.reset();
+            setTimeout(() => setStatus(''), 5000);
+        }, 1500);
     };
 
     return (
-        <div className="text-center max-w-2xl mx-auto p-4">
+        <div className="text-center max-w-2xl mx-auto">
             <SectionTitle title="Get In Touch" number={6} />
             <p className="text-cyan-300/80 mb-8">
                 My inbox is always open. Whether you have a question, a project proposal, or just want to connect, feel free to reach out. I'll do my best to get back to you!
             </p>
-            {/* Add the ref to your form element */}
-            <form ref={form} onSubmit={handleSubmit} className="w-full mx-auto flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="w-full mx-auto flex flex-col gap-4">
                 <div className="flex flex-col sm:flex-row gap-4">
-                    {/* Ensure inputs have 'name' attributes matching your EmailJS template */}
-                    <input type="text" name="name" placeholder="Name / Alias" required className="w-full bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors text-white" />
-                    <input type="email" name="email" placeholder="Email Address" required className="w-full bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors text-white" />
+                    <input type="text" name="name" placeholder="Name / Alias" required className="w-full bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors" />
+                    <input type="email" name="email" placeholder="Email Address" required className="w-full bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors" />
                 </div>
-                <textarea name="message" rows="5" placeholder="Your message..." required className="bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors text-white"></textarea>
-                
-                {/* I'm using a standard button here. 
-                  If 'cyber-button' is your custom class, that's great! 
-                */}
-                <button type="submit" className="self-center mt-4 px-6 py-2 bg-cyan-600 text-black font-bold rounded-md hover:bg-cyan-500 transition-colors cyber-button">
+                <textarea name="message" rows="5" placeholder="Your message..." required className="bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
+                <button type="submit" className="cyber-button self-center mt-4">
                     Send Transmission
                 </button>
             </form>
-            {status && (
-                <p className={`mt-4 ${status.startsWith('Error') ? 'text-red-400' : 'text-green-400'}`}>
-                    {status}
-                </p>
-            )}
+            {status && <p className="mt-4 text-green-400">{status}</p>}
         </div>
     );
 };
-
-
-
