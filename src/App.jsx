@@ -337,9 +337,9 @@ const About = () => (
         <SectionTitle title="About Me" number={1} />
         <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="md:w-2/3 text-cyan-300/80 space-y-4 text-base leading-relaxed">
-                <p>I am Shivam Kumar, a B.Tech CSE student specializing in Cybersecurity. Passionate about ethical hacking, network security, and digital forensics, I enjoy exploring the intricacies of how systems work and how to protect them from modern cyber threats.</p>
-                <p>I’m constantly learning new technologies and tools, from programming in C, C++, and Python, to experimenting with Linux, networking, and penetration testing. My goal is to become a proficient ethical hacker and cybersecurity professional, building secure and resilient digital systems that make the digital world safer.</p>
-                <p>Outside of my professional work, I contribute to open-source security tools, participate in CTF competitions, and research to enhance computer security.</p>
+                <p>I’m Shivam Kumar, a B.Tech CSE (Cybersecurity) student with a strong interest in ethical hacking, network security, and digital forensics.</p>
+                <p>Certified by Cisco as an Ethical Hacker and Junior Cybersecurity Analyst, I’ve gained practical experience through virtual job simulations with Tata, AIG, and Mastercard via Forage.</p>
+                  <p>Proficient in C, C++, Python, Linux, and penetration testing, I aim to apply my technical skills to develop secure, resilient systems and defend against emerging cyber threats.</p>
             </div>
             <div className="md:w-1/3 flex justify-center items-center">
                  <div className="relative w-64 h-64 group">
