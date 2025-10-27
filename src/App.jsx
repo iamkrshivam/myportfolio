@@ -624,13 +624,5 @@ const Contact = () => {
     );
 };
 
-// Main App component to render the Contact form
-export default function App() {
-    return (
-        <div className="bg-gray-900 min-h-screen flex items-center justify-center font-sans">
-            <Contact />
-        </div>
-    );
-}
 
 
