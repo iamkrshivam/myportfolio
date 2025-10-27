@@ -418,14 +418,6 @@ const Skills = () => {
 const Experience = () => {
   const jobs = [
     {
-      company: "Darbhanga College of Engineering",
-      role: "Student",
-      duration: "2024 - Present",
-      tasks: [
-        "Currently pursuing B.Tech in Computer Science and Engineering (Cybersecurity)",
-      ],
-    },
-    {
       company: "Tata (Forage)",
       role: "Cybersecurity Analyst – Virtual Job Simulation",
       duration: "2025",
