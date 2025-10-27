@@ -416,79 +416,91 @@ const Skills = () => {
 };
 
 const Experience = () => {
-    const jobs = [
-      [
+  const jobs = [
     {
-        company: "Darbhanga College of Engineering",
-        role: "Student",
-        duration: "2024 - Present",
-        tasks: [
-            "Currently pursuing B.Tech in Computer Science and Engineering (Cybersecurity)"
-        ]
+      company: "Darbhanga College of Engineering",
+      role: "Student",
+      duration: "2024 - Present",
+      tasks: [
+        "Currently pursuing B.Tech in Computer Science and Engineering (Cybersecurity)",
+      ],
     },
     {
-        company: "Tata (Forage)",
-        role: "Cybersecurity Analyst – Virtual Job Simulation",
-        duration: "2025",
-        tasks: [
-            "Performed vulnerability assessment and incident response exercises",
-            "Practiced identity and access management and network monitoring tasks",
-            "Gained insight into real-world cybersecurity operations"
-        ]
+      company: "Tata (Forage)",
+      role: "Cybersecurity Analyst – Virtual Job Simulation",
+      duration: "2025",
+      tasks: [
+        "Performed vulnerability assessment and incident response exercises",
+        "Practiced identity and access management and network monitoring tasks",
+        "Gained insight into real-world cybersecurity operations",
+      ],
     },
     {
-        company: "Mastercard (Forage)",
-        role: "Cybersecurity Analyst Intern – Virtual Job Simulation",
-        duration: "2025",
-        tasks: [
-            "Simulated SOC operations and cyber incident handling",
-            "Conducted vulnerability management and access control analysis",
-            "Worked on digital risk assessment and mitigation strategies"
-        ]
+      company: "Mastercard (Forage)",
+      role: "Cybersecurity Analyst Intern – Virtual Job Simulation",
+      duration: "2025",
+      tasks: [
+        "Simulated SOC operations and cyber incident handling",
+        "Conducted vulnerability management and access control analysis",
+        "Worked on digital risk assessment and mitigation strategies",
+      ],
     },
     {
-        company: "AIG (Forage)",
-        role: "Cybersecurity Intern – Virtual Job Simulation",
-        duration: "2025",
-        tasks: [
-            "Supported digital security operations and cyber risk management activities",
-            "Applied practical cybersecurity concepts to simulated environments"
-        ]
-    }
-]
+      company: "AIG (Forage)",
+      role: "Cybersecurity Intern – Virtual Job Simulation",
+      duration: "2025",
+      tasks: [
+        "Supported digital security operations and cyber risk management activities",
+        "Applied practical cybersecurity concepts to simulated environments",
+      ],
+    },
+  ];
 
+  const [activeTab, setActiveTab] = useState(0);
 
-    const [activeTab, setActiveTab] = useState(0);
-
-    return (
-        <div>
-            <SectionTitle title="Experience" number={3} />
-            <div className="flex flex-col md:flex-row gap-8">
-                <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible">
-                    {jobs.map((job, index) => (
-                        <button key={index} onClick={() => setActiveTab(index)}
-                                className={`text-left p-3 whitespace-nowrap border-b-2 md:border-l-2 md:border-b-0 transition-all duration-300 ${activeTab === index ? 'text-cyan-400 border-cyan-400 bg-cyan-900/20' : 'text-cyan-300/70 border-cyan-300/20 hover:bg-cyan-900/20 hover:text-cyan-400'}`}>
-                            {job.company}
-                        </button>
-                    ))}
-                </div>
-                <div className="w-full">
-                    <h3 className="text-xl font-bold text-white">{jobs[activeTab].role} <span className="text-cyan-400">@ {jobs[activeTab].company}</span></h3>
-                    <p className="text-sm text-cyan-300/60 mb-4 mt-1">{jobs[activeTab].duration}</p>
-                    <ul className="space-y-3">
-                        {jobs[activeTab].tasks.map((task, i) => (
-                            <li key={i} className="flex items-start">
-                                <span className="text-cyan-400 mr-3 mt-1">&#9655;</span>
-                                <span className="text-cyan-300/80">{task}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
+  return (
+    <div>
+      <SectionTitle title="Experience" number={3} />
+      <div className="flex flex-col md:flex-row gap-8">
+        {/* Tabs */}
+        <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible">
+          {jobs.map((job, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveTab(index)}
+              className={`text-left p-3 whitespace-nowrap border-b-2 md:border-l-2 md:border-b-0 transition-all duration-300 ${
+                activeTab === index
+                  ? "text-cyan-400 border-cyan-400 bg-cyan-900/20"
+                  : "text-cyan-300/70 border-cyan-300/20 hover:bg-cyan-900/20 hover:text-cyan-400"
+              }`}
+            >
+              {job.company}
+            </button>
+          ))}
         </div>
-    );
-};
 
+        {/* Details */}
+        <div className="w-full">
+          <h3 className="text-xl font-bold text-white">
+            {jobs[activeTab].role}{" "}
+            <span className="text-cyan-400">@ {jobs[activeTab].company}</span>
+          </h3>
+          <p className="text-sm text-cyan-300/60 mb-4 mt-1">
+            {jobs[activeTab].duration}
+          </p>
+          <ul className="space-y-3">
+            {jobs[activeTab].tasks.map((task, i) => (
+              <li key={i} className="flex items-start">
+                <span className="text-cyan-400 mr-3 mt-1">&#9655;</span>
+                <span className="text-cyan-300/80">{task}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
 const ProjectCard = ({ project }) => (
     <a href={project.link} target="_blank" rel="noopener noreferrer" className="block cyber-card group p-6">
         <div className="flex justify-between items-start mb-4">
