@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import emailjs from 'emailjs-com';
 
 // --- SVG Icons ---
 const CodeIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>;
@@ -267,8 +266,9 @@ const Footer = () => (
 // --- Section Components ---
 
 const SectionTitle = ({ title, number }) => (
-    <h2 className="text-3xl font-bold text-center text-white mb-4">
-        <span className="text-cyan-400 font-mono">{number}.</span> {title}
+    <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 flex items-center whitespace-nowrap">
+        <span className="text-cyan-400 mr-4 text-2xl md:text-3xl">0{number}.</span> {title}
+        <span className="flex-grow h-px bg-cyan-300/20 ml-6 w-full"></span>
     </h2>
 );
 
@@ -567,38 +567,37 @@ const Certifications = () => {
 };
 
 const Contact = () => {
-    const [status, setStatus] = useState('');
+    const [status, setStatus] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setStatus('Sending...');
-        // Mock sending form
-        setTimeout(() => {
-            setStatus('Signal received! I will be in touch.');
-            e.target.reset();
-            setTimeout(() => setStatus(''), 5000);
-        }, 1500);
-    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setStatus('Sending...');
+        // Mock sending form
+        setTimeout(() => {
+            setStatus('Signal received! I will be in touch.');
+            e.target.reset();
+            setTimeout(() => setStatus(''), 5000);
+        }, 1500);
+    };
 
-    return (
-        <div className="text-center max-w-2xl mx-auto">
-            <SectionTitle title="Get In Touch" number={6} />
-            <p className="text-cyan-300/80 mb-8">
-                My inbox is always open. Whether you have a question, a project proposal, or just want to connect, feel free to reach out. I'll do my best to get back to you!
-            </p>
-            <form onSubmit={handleSubmit} className="w-full mx-auto flex flex-col gap-4">
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <input type="text" name="name" placeholder="Name / Alias" required className="w-full bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors" />
-                    <input type="email" name="email" placeholder="Email Address" required className="w-full bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors" />
-                </div>
-                <textarea name="message" rows="5" placeholder="Your message..." required className="bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
-                <button type="submit" className="cyber-button self-center mt-4">
-                    Send Transmission
-                </button>
-            </form>
-            {status && <p className="mt-4 text-green-400">{status}</p>}
-        </div>
-    );
+    return (
+        <div className="text-center max-w-2xl mx-auto">
+            <SectionTitle title="Get In Touch" number={6} />
+            <p className="text-cyan-300/80 mb-8">
+                My inbox is always open. Whether you have a question, a project proposal, or just want to connect, feel free to reach out. I'll do my best to get back to you!
+            </p>
+            <form onSubmit={handleSubmit} className="w-full mx-auto flex flex-col gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <input type="text" name="name" placeholder="Name / Alias" required className="w-full bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors" />
+                    <input type="email" name="email" placeholder="Email Address" required className="w-full bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors" />
+                </div>
+                <textarea name="message" rows="5" placeholder="Your message..." required className="bg-black/30 border border-cyan-300/20 p-3 rounded-md focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
+                <button type="submit" className="cyber-button self-center mt-4">
+                    Send Transmission
+                </button>
+            </form>
+            {status && <p className="mt-4 text-green-400">{status}</p>}
+        </div>
+    );
 };
-
 
