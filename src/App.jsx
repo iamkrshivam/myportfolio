@@ -338,8 +338,8 @@ const About = () => (
         <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="md:w-2/3 text-cyan-300/80 space-y-4 text-base leading-relaxed">
                 <p>I’m Shivam Kumar, a B.Tech CSE (Cybersecurity) student with a strong interest in ethical hacking, network security, and digital forensics.</p>
-                <p>Certified by Cisco as an Ethical Hacker and Junior Cybersecurity Analyst, I’ve gained practical experience through virtual job simulations with Tata, AIG, and Mastercard via Forage.</p>
-                  <p>Proficient in C, C++, Python, Linux, and penetration testing, I aim to apply my technical skills to develop secure, resilient systems and defend against emerging cyber threats.</p>
+                <p>Certified by Cisco as an Ethical Hacker and Junior Cybersecurity Analyst, and by Fortinet as a Fortinet Certified Associate in Cybersecurity, I’ve gained practical exposure through virtual job simulations with Tata, AIG, and Mastercard via Forage.</p>
+                  <p>Proficient in C,Python, Linux, and penetration testing, I aim to apply my technical skills to develop secure, resilient systems and defend against emerging cyber threats.</p>
             </div>
             <div className="md:w-1/3 flex justify-center items-center">
                  <div className="relative w-64 h-64 group">
@@ -373,7 +373,7 @@ const SkillCard = ({ category, skills, icon }) => (
 
 const Skills = () => {
     const skillsData = [
-        { category: "Languages & Scripting", skills: ["Python", "Bash","Linux","HTML","CSS","JavaScript", "C", "C++"], icon: <CodeIcon /> },
+        { category: "Languages & Scripting", skills: ["Python", "Bash","Linux","HTML","CSS","JavaScript", "C"], icon: <CodeIcon /> },
         { category: "Security Tools", skills: ["Wireshark", "Nmap", "Metasploit", "Ettercap", "Burp Suite", "Ghidra"], icon: <ShieldIcon /> },
         { category: "Networking & Protocols", skills: ["TCP/IP", "OSI Model", "IPv4/IPv6", "Network Troubleshooting", "Basic CCNA Concepts"], icon: <BrainIcon /> },
         { category: "Other Tools & Platforms", skills: ["Git", "GitHub", "VirtualBox", "Termux", "Linux Command Line"], icon: <ServerIcon /> },
@@ -531,10 +531,10 @@ const Projects = () => {
 
 const Certifications = () => {
     const certificationsData = [
-        { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "https://www.credly.com/badges/404cbe27-a858-4438-bf28-89fc5d034cc3" }, 
+        { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "/Ethical Hacker.pdf" }, 
       {name:"Fortinet Certified Associate in Cybersecurity", issuer:"Fortinet", link:"/Fortinet Certified Associate in Cybersecurity.pdf"},
-         { name: "Junior Cybersecurity Analyst Career Path", issuer: "Cisco Networking Academy program", link: "https://www.credly.com/badges/8c903e91-15f0-488f-99bb-8bdc034f28fd" },
-        { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "https://www.credly.com/badges/e4a4648c-ef48-484c-a460-f8d6e7793c9b" },
+         { name: "Junior Cybersecurity Analyst Career Path", issuer: "Cisco Networking Academy program", link: "/Junior Cybersecurity Analyst Career Path Exam.pdf" },
+        { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "/introtocybersecurity.pdf" },
        
         
     ];
