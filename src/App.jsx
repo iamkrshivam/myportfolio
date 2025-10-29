@@ -532,6 +532,7 @@ const Projects = () => {
 const Certifications = () => {
     const certificationsData = [
         { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "https://www.credly.com/badges/404cbe27-a858-4438-bf28-89fc5d034cc3" }, 
+      {name:"Fortinet Certified Associate in Cybersecurity", issuer:"Fortinet", link:"/Fortinet Certified Associate in Cybersecurity.pdf"},
          { name: "Junior Cybersecurity Analyst Career Path", issuer: "Cisco Networking Academy program", link: "https://www.credly.com/badges/8c903e91-15f0-488f-99bb-8bdc034f28fd" },
         { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "https://www.credly.com/badges/e4a4648c-ef48-484c-a460-f8d6e7793c9b" },
        
