@@ -25,17 +25,16 @@ const Linkedin = ({ className }) => <IconWrapper className={className}><path d="
 const Mail = ({ className }) => <IconWrapper className={className}><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></IconWrapper>;
 const Terminal = ({ className }) => <IconWrapper className={className}><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></IconWrapper>;
 const Shield = ({ className }) => <IconWrapper className={className}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></IconWrapper>;
-const Cpu = ({ className }) => <IconWrapper className={className}><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></IconWrapper>;
-const Lock = ({ className }) => <IconWrapper className={className}><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></IconWrapper>;
 const ChevronDown = ({ className }) => <IconWrapper className={className}><path d="m6 9 6 6 6-6"/></IconWrapper>;
 const MapPin = ({ className }) => <IconWrapper className={className}><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></IconWrapper>;
-const Phone = ({ className }) => <IconWrapper className={className}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></IconWrapper>;
 const Download = ({ className }) => <IconWrapper className={className}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></IconWrapper>;
-const Copy = ({ className }) => <IconWrapper className={className}><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></IconWrapper>;
 const CheckCircle = ({ className }) => <IconWrapper className={className}><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></IconWrapper>;
 const Globe = ({ className }) => <IconWrapper className={className}><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="a12.2 12.2 0 0 1 8-10 12.2 12.2 0 0 1 4 10 12.2 12.2 0 0 1-4 10 12.2 12.2 0 0 1-8-10z"/></IconWrapper>;
+const ExternalLink = ({ className }) => <IconWrapper className={className}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></IconWrapper>;
+const FileText = ({ className }) => <IconWrapper className={className}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></IconWrapper>;
+const BookOpen = ({ className }) => <IconWrapper className={className}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></IconWrapper>;
 
-/* DATA SOURCE */
+/* DATA SOURCE - Extracted from Old Code & Uploads */
 const portfolioData = {
   personal: {
     name: "Shivam Kumar",
@@ -44,27 +43,18 @@ const portfolioData = {
     email: "skgp11808@gmail.com",
     phone: "+91 8102092859",
     location: "Gaya, Bihar, India",
-    linkedin: "https://www.linkedin.com/in/shivamkumar-dce-cybersecurity",
-    github: "https://github.com/shivamkumar", 
-    resumeLink: "#", 
-    profileImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400", // REPLACE THIS WITH YOUR LOCAL IMAGE
+    linkedin: "https://www.linkedin.com/in/shivam-kumar-243a39389/",
+    github: "https://github.com/iamkrshivam", 
+    resumeLink: "/resume.pdf", 
+    profileImage: "/Shivam.png", 
     about: "I'm a B.Tech CSE (Cybersecurity) student at Darbhanga College of Engineering (2024-2028) with a relentless passion for ethical hacking, network security, and digital forensics. My technical foundation is backed by world-class training from Harvard CS50, Cisco, and Fortinet. I believe in hands-on application, having gained practical exposure through virtual job simulations with industry giants like Tata, AIG, and Mastercard."
   },
   skills: {
-    cybersecurity: [
-      "Vulnerability Assessment (VAPT)", "Penetration Testing", "SQL Injection", 
-      "Threat Detection", "Incident Response", "SOC Fundamentals",
-      "Digital Forensics", "Risk Assessment"
-    ],
-    tools: [
-      "Burp Suite", "Wireshark", "Nmap", "VirtualBox", "Linux (Kali/Ubuntu)"
-    ],
-    programming: [
-      "Python", "C", "Bash Scripting", "HTML/CSS", "JavaScript", "SQL"
-    ],
-    networking: [
-      "Network Security", "IAM (Identity Access Mgmt)", "Virtualization", "TCP/IP Protocols"
-    ]
+    "Languages & Scripting": ["Python", "Bash", "Linux", "HTML", "CSS", "JavaScript", "C"],
+    "Security Tools": ["Wireshark", "Nmap", "Metasploit", "Ettercap", "Burp Suite", "Ghidra"],
+    "Networking": ["TCP/IP", "OSI Model", "IPv4/IPv6", "Troubleshooting", "CCNA Concepts"],
+    "Platforms & OS": ["Git", "GitHub", "VirtualBox", "Termux", "Kali Linux", "Parrot OS", "Windows", "Android"],
+    "Soft Skills": ["Problem Solving", "Analytical Thinking", "Attention to Detail", "Self-Learning"]
   },
   experience: [
     {
@@ -75,21 +65,21 @@ const portfolioData = {
       description: "Focusing on threat analysis, vulnerability assessment, and implementing security best practices to enhance system protection."
     },
     {
-      company: "Mastercard",
+      company: "Mastercard (via Forage)",
       role: "Cybersecurity Analyst Intern",
       period: "Oct 2025",
       type: "Virtual Job Simulation",
       description: "Simulated SOC operations and cyber incident investigations. Performed access control analysis and vulnerability management in an enterprise environment."
     },
     {
-      company: "Tata",
+      company: "Tata (via Forage)",
       role: "Cybersecurity Analyst",
       period: "Oct 2025",
       type: "Virtual Job Simulation",
       description: "Gained experience in Identity and Access Management (IAM). Analyzed network vulnerabilities and configured secure systems."
     },
     {
-      company: "AIG",
+      company: "AIG (via Forage)",
       role: "Cybersecurity Intern",
       period: "2025",
       type: "Virtual Job Simulation",
@@ -101,35 +91,40 @@ const portfolioData = {
       institution: "Darbhanga College of Engineering",
       degree: "B.Tech in Computer Science & Engineering (Cybersecurity)",
       period: "2024 - 2028",
-      details: "1st Year / 2nd Semester. Focusing on Network Defense and Ethical Hacking."
+      location: "Bihar, India",
+      details: "1st Year / 2nd Semester. Focusing on Network Defense, Ethical Hacking, and Computer Science fundamentals."
     }
   ],
   certifications: [
-    { name: "Fortinet Certified Associate", issuer: "Fortinet" },
-    { name: "Ethical Hacker", issuer: "Cisco Networking Academy" },
-    { name: "Jr. Cybersecurity Analyst", issuer: "Cisco Networking Academy" },
-    { name: "Intro to Cybersecurity", issuer: "Harvard CS50 & Cisco" }
+    { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "/Ethical Hacker.pdf" },
+    { name: "Fortinet Certified Associate", issuer: "Fortinet", link: "/Fortinet Certified Associate in Cybersecurity.pdf" },
+    { name: "Junior Cybersecurity Analyst", issuer: "Cisco Networking Academy", link: "/Junior Cybersecurity Analyst Career Path Exam.pdf" },
+    { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "/introtocybersecurity.pdf" }
   ],
   projects: [
     {
       title: "Network Monitor Tool",
-      tech: "Python, Networking",
-      description: "Developed a Python tool to monitor network traffic in real-time and log unusual activity for threat detection."
+      tech: "Python, Networking, Cybersecurity",
+      description: "Created a simple Python tool to monitor network traffic and log unusual activity for practice purposes.",
+      link: "https://github.com/iamkrshivam/network-monitor-tool"
     },
     {
       title: "Password Manager",
-      tech: "Python, Encryption",
-      description: "Built a secure password manager utilizing encryption algorithms to ensure safe storage of sensitive credentials."
+      tech: "Python, Encryption, Security",
+      description: "Built a basic password manager to securely store and retrieve passwords using Python and file encryption.",
+      link: "https://github.com/iamkrshivam/my-password-manager"
     },
     {
       title: "Linux Security Script",
-      tech: "Bash, Linux",
-      description: "Created a Bash script to automate critical Linux system updates and perform routine security configuration checks."
+      tech: "Bash, Linux, Automation",
+      description: "Developed a small Bash script to automate system updates and apply basic security checks on Linux.",
+      link: "https://github.com/iamkrshivam/Linux-Security-Script"
     },
     {
       title: "Network Port Scanner",
-      tech: "Python, Sockets",
-      description: "Developed a TCP/UDP port scanner capable of banner grabbing to identify running services and potential vulnerabilities. Outputs to JSON/CSV."
+      tech: "Python, Scapy, Networking",
+      description: "Fast interactive port scanner supporting TCP/UDP, auto timeouts, banner grabbing, and JSON/CSV output.",
+      link: "https://github.com/iamkrshivam/Port_scanner"
     }
   ]
 };
@@ -183,6 +178,7 @@ const Navigation = () => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Education', href: '#education' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -205,7 +201,7 @@ const Navigation = () => {
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
-                href={link.href} 
+                href={link.href}
                 className="text-sm font-medium text-zinc-400 hover:text-green-400 transition-colors tracking-wide relative group"
               >
                 {link.name}
@@ -282,15 +278,15 @@ const Hero = () => {
               <a href="#projects" className="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-zinc-200 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]">
                 View Protocols
               </a>
-              <a href={portfolioData.personal.resumeLink} className="px-8 py-4 bg-zinc-900 text-white border border-zinc-800 rounded-lg hover:border-green-500/50 hover:bg-zinc-900/80 transition-all flex items-center justify-center gap-2 group">
+              <a href={portfolioData.personal.resumeLink} download className="px-8 py-4 bg-zinc-900 text-white border border-zinc-800 rounded-lg hover:border-green-500/50 hover:bg-zinc-900/80 transition-all flex items-center justify-center gap-2 group">
                 <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
                 Init Resume
               </a>
             </div>
             
             <div className="mt-12 flex items-center justify-center lg:justify-start gap-6 text-zinc-500">
-               <a href={portfolioData.personal.github} className="hover:text-green-400 transition-colors transform hover:scale-110"><Github className="w-6 h-6"/></a>
-               <a href={portfolioData.personal.linkedin} className="hover:text-green-400 transition-colors transform hover:scale-110"><Linkedin className="w-6 h-6"/></a>
+               <a href={portfolioData.personal.github} target="_blank" rel="noreferrer" className="hover:text-green-400 transition-colors transform hover:scale-110"><Github className="w-6 h-6"/></a>
+               <a href={portfolioData.personal.linkedin} target="_blank" rel="noreferrer" className="hover:text-green-400 transition-colors transform hover:scale-110"><Linkedin className="w-6 h-6"/></a>
                <a href={`mailto:${portfolioData.personal.email}`} className="hover:text-green-400 transition-colors transform hover:scale-110"><Mail className="w-6 h-6"/></a>
             </div>
           </RevealOnScroll>
@@ -299,7 +295,7 @@ const Hero = () => {
         {/* Profile Image Section */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
           <RevealOnScroll className="delay-200">
-            {/* UPDATED: Resized image container (Smaller) */}
+            {/* UPDATED: Resized image container */}
             <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 group">
               {/* Animated Rings */}
               <div className="absolute inset-0 rounded-full border border-green-500/20 animate-[spin_10s_linear_infinite]"></div>
@@ -309,8 +305,9 @@ const Hero = () => {
               <div className="absolute inset-8 rounded-full overflow-hidden border-2 border-green-500/20 bg-zinc-900 relative z-10">
                 <img 
                   src={portfolioData.personal.profileImage} 
-                  alt="Profile" 
+                  alt="Shivam Kumar" 
                   className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+                  onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400"; }} // Fallback if image not found
                 />
                 {/* Scanline Effect Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/10 to-transparent h-full w-full animate-[scan_2s_linear_infinite] pointer-events-none opacity-50"></div>
@@ -333,7 +330,6 @@ const Hero = () => {
   );
 };
 
-/* --- ADDED: ABOUT SECTION --- */
 const About = () => {
   return (
     <section id="about" className="py-24 bg-zinc-950/50 relative overflow-hidden">
@@ -387,19 +383,11 @@ const About = () => {
                I don't just study cybersecurity; I practice it. From analyzing network traffic patterns to simulating enterprise-level SOC operations, my approach is rooted in hands-on defense.
              </p>
              
-             <div className="space-y-4">
-                {portfolioData.education.map((edu, idx) => (
-                  <div key={idx} className="flex gap-4 items-start">
-                    <div className="mt-1.5 p-1 bg-green-500/10 rounded border border-green-500/20">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-bold">{edu.institution}</h4>
-                      <p className="text-sm text-green-400">{edu.degree}</p>
-                      <p className="text-xs text-zinc-500 mt-1 font-mono">{edu.period} • {edu.details}</p>
-                    </div>
-                  </div>
-                ))}
+             {/* Note: Education has been moved to its own dedicated section below */}
+             <div className="flex flex-col gap-4">
+               <p className="text-sm font-mono text-green-500/80">
+                 // See Education section for academic details
+               </p>
              </div>
           </RevealOnScroll>
         </div>
@@ -422,7 +410,7 @@ const Skills = () => {
           </div>
         </RevealOnScroll>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {Object.entries(portfolioData.skills).map(([category, items], idx) => (
             <RevealOnScroll key={idx} className={`delay-${idx * 100}`}>
               <div className="h-full bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/50 p-6 rounded-2xl hover:bg-zinc-900/60 transition-all duration-300 hover:border-green-500/30 hover:-translate-y-1 group hover:shadow-[0_10px_30px_-10px_rgba(34,197,94,0.1)]">
@@ -495,9 +483,66 @@ const Experience = () => {
   );
 };
 
+/* --- NEW COMPONENT: EDUCATION --- */
+const Education = () => {
+  return (
+    <section id="education" className="py-24 bg-black border-t border-zinc-900/50 relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
+        <RevealOnScroll>
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Academic <span className="text-green-500">Record</span></h2>
+            <div className="h-1 w-20 bg-green-600 rounded-full"></div>
+          </div>
+        </RevealOnScroll>
+
+        <div className="space-y-8">
+          {portfolioData.education.map((edu, idx) => (
+            <RevealOnScroll key={idx}>
+              <div className="bg-zinc-900/20 border border-zinc-800 rounded-2xl p-8 hover:border-green-500/30 transition-colors relative overflow-hidden group">
+                {/* Decorative BG icon */}
+                <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
+                  <BookOpen className="w-48 h-48 text-green-500" />
+                </div>
+
+                <div className="flex flex-col md:flex-row gap-6 relative z-10">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-green-500/10 rounded-xl flex items-center justify-center border border-green-500/20 text-green-500">
+                       <BookOpen className="w-8 h-8" />
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                      <h3 className="text-2xl font-bold text-white">{edu.institution}</h3>
+                      <span className="text-green-500 font-mono text-sm bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20 mt-2 md:mt-0">{edu.period}</span>
+                    </div>
+                    
+                    <h4 className="text-lg text-green-400 mb-4">{edu.degree}</h4>
+                    
+                    <div className="grid md:grid-cols-2 gap-4 text-sm text-zinc-400 font-mono">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-zinc-500" />
+                        {edu.location}
+                      </div>
+                    </div>
+                    
+                    <p className="mt-6 text-zinc-400 leading-relaxed border-t border-zinc-800 pt-4">
+                      {edu.details}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </RevealOnScroll>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 bg-black relative">
+    <section id="projects" className="py-32 bg-zinc-950 relative">
        {/* Background Noise Texture */}
        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none"></div>
 
@@ -509,19 +554,19 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {portfolioData.projects.map((project, index) => (
             <RevealOnScroll key={index} className={`delay-${index * 100}`}>
-              <div className="group relative bg-zinc-900/20 border border-zinc-800 rounded-3xl p-8 hover:bg-zinc-900/40 transition-all duration-500 hover:border-green-500/30 overflow-hidden hover:-translate-y-2">
+              <div className="group relative bg-zinc-900/20 border border-zinc-800 rounded-3xl p-8 hover:bg-zinc-900/40 transition-all duration-500 hover:border-green-500/30 overflow-hidden hover:-translate-y-2 flex flex-col h-full">
                 {/* Decoration */}
                 <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
                    <Terminal className="w-24 h-24 text-green-500/5 -rotate-12" />
                 </div>
                 
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                   <div className="flex justify-between items-start mb-6">
                     <div className="w-12 h-12 bg-zinc-900 rounded-xl border border-zinc-800 flex items-center justify-center group-hover:border-green-500/30 group-hover:text-green-500 transition-colors">
                       <Terminal className="w-6 h-6" />
                     </div>
-                    <a href={portfolioData.personal.github} className="text-zinc-500 hover:text-white transition-colors">
-                      <Github className="w-5 h-5"/>
+                    <a href={project.link} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+                      <ExternalLink className="w-5 h-5"/>
                     </a>
                   </div>
                   
@@ -530,12 +575,17 @@ const Projects = () => {
                     {project.description}
                   </p>
                   
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tech.split(', ').map((t, i) => (
-                      <span key={i} className="text-xs font-medium text-green-400/80 bg-green-900/10 px-3 py-1 rounded-full border border-green-500/10">
-                        {t}
-                      </span>
-                    ))}
+                  <div className="mt-auto">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tech.split(', ').map((t, i) => (
+                        <span key={i} className="text-xs font-medium text-green-400/80 bg-green-900/10 px-3 py-1 rounded-full border border-green-500/10">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <a href={project.link} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-bold text-green-500 hover:text-green-400">
+                      View Source <Github className="w-4 h-4 ml-2" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -545,6 +595,35 @@ const Projects = () => {
       </div>
     </section>
   );
+};
+
+const Certifications = () => {
+    return (
+      <section id="certifications" className="py-24 bg-black border-t border-zinc-900">
+        <div className="max-w-7xl mx-auto px-6">
+            <RevealOnScroll>
+                <h2 className="text-4xl font-bold text-white mb-12">Credentials <span className="text-green-500">& Certs</span></h2>
+            </RevealOnScroll>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {portfolioData.certifications.map((cert, index) => (
+                    <RevealOnScroll key={index} className={`delay-${index * 100}`}>
+                        <a href={cert.link} target="_blank" rel="noreferrer" className="block h-full bg-zinc-900/40 border border-zinc-800 p-6 rounded-2xl hover:border-green-500/50 hover:bg-zinc-900/60 transition-all group">
+                            <div className="w-10 h-10 bg-green-900/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <FileText className="w-5 h-5 text-green-500" />
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-200 group-hover:text-green-400 transition-colors mb-2">{cert.name}</h3>
+                            <p className="text-xs text-gray-500 font-mono mb-4">{cert.issuer}</p>
+                            <div className="flex items-center text-xs text-green-500 font-bold mt-auto">
+                                VIEW DOCUMENT <ExternalLink className="w-3 h-3 ml-2" />
+                            </div>
+                        </a>
+                    </RevealOnScroll>
+                ))}
+            </div>
+        </div>
+      </section>
+    );
 };
 
 const Contact = () => {
@@ -570,7 +649,7 @@ const Contact = () => {
             Ready to secure your infrastructure? I am available for internships and security audits.
           </p>
 
-          <div className="bg-black/50 backdrop-blur-md border border-zinc-800 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+          <div className="bg-zinc-900/30 backdrop-blur-md border border-zinc-800 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
             {/* Corner Accents */}
             <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-green-500/20 rounded-tl-3xl"></div>
             <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-green-500/20 rounded-br-3xl"></div>
@@ -583,7 +662,7 @@ const Contact = () => {
                     type="text"
                     required
                     placeholder="John Doe"
-                    className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-green-500 transition-colors placeholder:text-zinc-700"
+                    className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-green-500 transition-colors placeholder:text-zinc-700"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                   />
@@ -594,7 +673,7 @@ const Contact = () => {
                     type="email"
                     required
                     placeholder="john@example.com"
-                    className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-green-500 transition-colors placeholder:text-zinc-700"
+                    className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-green-500 transition-colors placeholder:text-zinc-700"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                   />
@@ -606,7 +685,7 @@ const Contact = () => {
                   required
                   rows={4}
                   placeholder="Message content..."
-                  className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-green-500 transition-colors resize-none placeholder:text-zinc-700"
+                  className="w-full bg-black/50 border border-zinc-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-green-500 transition-colors resize-none placeholder:text-zinc-700"
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 ></textarea>
@@ -652,7 +731,9 @@ export default function App() {
       <About />
       <Skills />
       <Experience />
+      <Education />
       <Projects />
+      <Certifications />
       <Contact />
       <Footer />
     </div>
