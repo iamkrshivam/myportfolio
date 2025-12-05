@@ -34,11 +34,11 @@ const ExternalLink = ({ className }) => <IconWrapper className={className}><path
 const FileText = ({ className }) => <IconWrapper className={className}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></IconWrapper>;
 const BookOpen = ({ className }) => <IconWrapper className={className}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></IconWrapper>;
 
-/* DATA SOURCE - Extracted from Old Code & Uploads */
+/* DATA SOURCE */
 const portfolioData = {
   personal: {
     name: "Shivam Kumar",
-    title: "Cybersecurity Student & Ethical Hacker",
+    title: "Cybersecurity Student",
     tagline: "Securing the digital frontier, one vulnerability at a time.",
     email: "skgp11808@gmail.com",
     phone: "+91 8102092859",
@@ -92,13 +92,15 @@ const portfolioData = {
       degree: "B.Tech in Computer Science & Engineering (Cybersecurity)",
       period: "2024 - 2028",
       location: "Bihar, India",
-      details: "1st Year / 2nd Semester. Focusing on Network Defense, Ethical Hacking, and Computer Science fundamentals."
+      details: "Focusing on Network Defense, Ethical Hacking, and Computer Science fundamentals."
     }
   ],
+  // Reordered by Value: Fortinet > Ethical Hacker > CS50 > Jr Analyst > Intro
   certifications: [
+    { name: "Fortinet Certified Associate in Cybersecurity", issuer: "Fortinet", link: "/Fortinet Certified Associate in Cybersecurity.pdf" },
     { name: "Ethical Hacker", issuer: "Cisco Networking Academy", link: "/Ethical Hacker.pdf" },
-    { name: "Fortinet Certified Associate", issuer: "Fortinet", link: "/Fortinet Certified Associate in Cybersecurity.pdf" },
-    { name: "Junior Cybersecurity Analyst", issuer: "Cisco Networking Academy", link: "/Junior Cybersecurity Analyst Career Path Exam.pdf" },
+    { name: "CS50's Introduction to Cybersecurity", issuer: "Harvard University", link: "/CS50 Cybersecurity.pdf" },
+    { name: "Junior Cybersecurity Analyst Career Path", issuer: "Cisco Networking Academy", link: "/Junior Cybersecurity Analyst Career Path Exam.pdf" },
     { name: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy", link: "/introtocybersecurity.pdf" }
   ],
   projects: [
@@ -184,12 +186,12 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 border-b ${scrolled ? 'bg-black/80 backdrop-blur-xl border-zinc-800 py-4' : 'bg-transparent border-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 border-b ${scrolled ? 'bg-black/80 backdrop-blur-md border-zinc-800 py-4 shadow-lg' : 'bg-transparent border-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="p-2 bg-green-500/10 rounded-lg border border-green-500/20 group-hover:border-green-500/50 transition-colors relative overflow-hidden">
-               <div className="absolute inset-0 bg-green-500/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+            <div className="p-2 bg-zinc-900 rounded-lg border border-zinc-800 group-hover:border-green-500/50 transition-colors relative overflow-hidden">
+               <div className="absolute inset-0 bg-green-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               <Terminal className="h-5 w-5 text-green-500 relative z-10" />
             </div>
             <span className="text-xl font-bold font-mono tracking-tighter text-white group-hover:text-green-500 transition-colors">
@@ -201,11 +203,11 @@ const Navigation = () => {
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
-                href={link.href}
-                className="text-sm font-medium text-zinc-400 hover:text-green-400 transition-colors tracking-wide relative group"
+                href={`#${link.name.toLowerCase()}`}
+                className="text-sm font-medium text-zinc-400 hover:text-white transition-colors tracking-wide relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-500 transition-all group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-green-500 transition-all group-hover:w-full"></span>
               </a>
             ))}
           </div>
@@ -224,7 +226,7 @@ const Navigation = () => {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={`#${link.name.toLowerCase()}`}
               onClick={() => setIsOpen(false)}
               className="block py-3 text-lg font-medium text-zinc-400 hover:text-green-400 transition-colors border-b border-zinc-800/50 last:border-0 font-mono"
             >
@@ -241,10 +243,12 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-black selection:bg-green-500/30">
       
+      {/* --- AMBIENT GLOW --- */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-green-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+
       {/* --- CYBER GRID BACKGROUND --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#111_1px,transparent_1px),linear-gradient(to_bottom,#111_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-[500px] bg-gradient-to-t from-green-900/10 to-transparent opacity-30 blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
@@ -252,35 +256,34 @@ const Hero = () => {
         {/* Text Content */}
         <div className="order-2 lg:order-1 text-center lg:text-left">
           <RevealOnScroll>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/10 border border-green-500/20 text-green-500 text-xs font-mono mb-6 hover:bg-green-900/20 transition-colors cursor-default">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-green-500 text-xs font-mono mb-8 hover:border-green-500/50 transition-colors cursor-default">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              SYSTEM STATUS: ONLINE
+              OPEN TO WORK
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-              Digital <br/>
+              Cybersecurity <br/>
               <span className="relative inline-block">
-                <span className="absolute -inset-1 bg-green-500/20 blur-xl"></span>
-                <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 animate-pulse">
-                  Defender.
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
+                  Student.
                 </span>
               </span>
             </h1>
             
-            <p className="text-zinc-400 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
+            <p className="text-zinc-400 text-lg md:text-xl max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed font-light">
               {portfolioData.personal.tagline}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#projects" className="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-zinc-200 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]">
-                View Protocols
+              <a href="#projects" className="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-zinc-200 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]">
+                View Work
               </a>
-              <a href={portfolioData.personal.resumeLink} download className="px-8 py-4 bg-zinc-900 text-white border border-zinc-800 rounded-lg hover:border-green-500/50 hover:bg-zinc-900/80 transition-all flex items-center justify-center gap-2 group">
+              <a href={portfolioData.personal.resumeLink} download className="px-8 py-4 bg-transparent text-white border border-zinc-700 rounded-lg hover:border-green-500 hover:text-green-400 transition-all flex items-center justify-center gap-2 group">
                 <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-                Init Resume
+                Resume
               </a>
             </div>
             
@@ -295,35 +298,34 @@ const Hero = () => {
         {/* Profile Image Section */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
           <RevealOnScroll className="delay-200">
-            {/* UPDATED: Resized image container */}
-            <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 group">
-              {/* Animated Rings */}
-              <div className="absolute inset-0 rounded-full border border-green-500/20 animate-[spin_10s_linear_infinite]"></div>
-              <div className="absolute inset-4 rounded-full border border-dashed border-zinc-700 animate-[spin_15s_linear_infinite_reverse]"></div>
+            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 group">
+              {/* Animated Rings - Pure CSS Animation */}
+              <div className="absolute inset-0 rounded-full border border-green-500/10 animate-[spin_10s_linear_infinite]"></div>
+              <div className="absolute inset-4 rounded-full border border-dashed border-zinc-800 animate-[spin_15s_linear_infinite_reverse]"></div>
               
-              {/* Image Container */}
-              <div className="absolute inset-8 rounded-full overflow-hidden border-2 border-green-500/20 bg-zinc-900 relative z-10">
+              {/* Image Container - ALWAYS COLOR */}
+              <div className="absolute inset-8 rounded-full overflow-hidden border-2 border-zinc-800 bg-zinc-900 relative z-10 shadow-2xl">
                 <img 
                   src={portfolioData.personal.profileImage} 
                   alt="Shivam Kumar" 
                   className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
-                  onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400"; }} // Fallback if image not found
+                  onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400"; }}
                 />
-                {/* Scanline Effect Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/10 to-transparent h-full w-full animate-[scan_2s_linear_infinite] pointer-events-none opacity-50"></div>
+                {/* Scanline Effect Overlay - Only visible on hover for effect */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/5 to-transparent h-full w-full animate-[scan_2s_linear_infinite] pointer-events-none opacity-20"></div>
               </div>
 
               {/* Floating Badges */}
-              <div className="absolute top-6 -right-2 bg-black/80 backdrop-blur border border-green-900/30 px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-2xl animate-bounce delay-1000 z-20">
+              <div className="absolute top-10 -right-4 bg-zinc-900/90 backdrop-blur-md border border-zinc-800 px-4 py-2 rounded-lg flex items-center gap-3 shadow-xl animate-bounce delay-1000 z-20">
                  <Shield className="w-4 h-4 text-green-500" />
-                 <span className="text-[10px] font-mono text-green-400 font-bold tracking-wider">SECURE</span>
+                 <span className="text-[10px] font-mono text-zinc-300 font-bold tracking-wider">SECURE</span>
               </div>
             </div>
           </RevealOnScroll>
         </div>
       </div>
       
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-zinc-600">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-zinc-700">
         <ChevronDown className="w-6 h-6" />
       </div>
     </section>
@@ -332,37 +334,35 @@ const Hero = () => {
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-zinc-950/50 relative overflow-hidden">
+    <section id="about" className="py-24 bg-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           <RevealOnScroll>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-transparent blur-2xl opacity-50"></div>
-              <div className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl relative">
+            <div className="sticky top-24">
+              <div className="bg-zinc-900/30 border border-zinc-800 p-8 rounded-2xl relative backdrop-blur-sm">
                 <div className="flex items-center gap-3 mb-6 border-b border-zinc-800 pb-4">
                   <Terminal className="w-5 h-5 text-green-500" />
-                  <span className="font-mono text-sm text-zinc-400">MISSION_PROFILE.log</span>
+                  <span className="font-mono text-sm text-zinc-500">ABOUT_ME.txt</span>
                   <div className="ml-auto flex gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
+                    <div className="w-2 h-2 rounded-full bg-zinc-700"></div>
+                    <div className="w-2 h-2 rounded-full bg-zinc-700"></div>
                   </div>
                 </div>
                 
                 <p className="text-zinc-300 leading-relaxed font-mono text-sm md:text-base mb-6">
-                  <span className="text-green-500">{'>'}</span> {portfolioData.personal.about}
+                  <span className="text-green-500 mr-2">{'>'}</span> {portfolioData.personal.about}
                 </p>
                 
                 <div className="grid grid-cols-2 gap-4 mt-8">
-                  <div className="bg-black/50 p-4 rounded border border-zinc-800">
+                  <div className="bg-black/40 p-4 rounded border border-zinc-800/50">
                     <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-1">Location</span>
                     <div className="flex items-center gap-2 text-zinc-300 text-sm">
                       <MapPin className="w-4 h-4 text-green-500" />
                       {portfolioData.personal.location}
                     </div>
                   </div>
-                  <div className="bg-black/50 p-4 rounded border border-zinc-800">
+                  <div className="bg-black/40 p-4 rounded border border-zinc-800/50">
                     <span className="text-xs text-zinc-500 uppercase tracking-wider block mb-1">Status</span>
                     <div className="flex items-center gap-2 text-zinc-300 text-sm">
                       <Globe className="w-4 h-4 text-green-500" />
@@ -376,17 +376,16 @@ const About = () => {
           
           <RevealOnScroll className="delay-200">
              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-               Forged in <span className="text-green-500">Code</span>,<br />
-               Proven in <span className="underline decoration-green-500/30 underline-offset-8">Simulation</span>.
+               Education & <br />
+               <span className="text-green-500">Experience</span>.
              </h2>
              <p className="text-zinc-400 mb-8 leading-relaxed">
-               I don't just study cybersecurity; I practice it. From analyzing network traffic patterns to simulating enterprise-level SOC operations, my approach is rooted in hands-on defense.
+               My journey is defined by a rigorous academic foundation in Computer Science and hands-on application in cybersecurity simulations. I bridge the gap between theory and real-world defense.
              </p>
              
-             {/* Note: Education has been moved to its own dedicated section below */}
-             <div className="flex flex-col gap-4">
-               <p className="text-sm font-mono text-green-500/80">
-                 // See Education section for academic details
+             <div className="pl-4 border-l-2 border-zinc-800">
+               <p className="text-sm font-mono text-zinc-500 italic">
+                 "I aim to leverage these skills to build secure, resilient systems."
                </p>
              </div>
           </RevealOnScroll>
@@ -398,14 +397,11 @@ const About = () => {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-32 bg-black relative overflow-hidden">
-      {/* Decorative BG elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-green-500/5 rounded-full blur-3xl"></div>
-      
+    <section id="skills" className="py-32 bg-black relative overflow-hidden border-t border-zinc-900/50">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <RevealOnScroll>
           <div className="mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Technical <span className="text-green-500">Arsenal</span></h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Technical <span className="text-green-500">Skills</span></h2>
             <div className="h-1 w-20 bg-green-600 rounded-full"></div>
           </div>
         </RevealOnScroll>
@@ -413,14 +409,14 @@ const Skills = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {Object.entries(portfolioData.skills).map(([category, items], idx) => (
             <RevealOnScroll key={idx} className={`delay-${idx * 100}`}>
-              <div className="h-full bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/50 p-6 rounded-2xl hover:bg-zinc-900/60 transition-all duration-300 hover:border-green-500/30 hover:-translate-y-1 group hover:shadow-[0_10px_30px_-10px_rgba(34,197,94,0.1)]">
-                <h3 className="text-lg font-bold text-white mb-6 capitalize flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-green-500 group-hover:animate-pulse"></span>
+              <div className="h-full bg-zinc-900/20 backdrop-blur-sm border border-zinc-800 p-6 rounded-2xl hover:bg-zinc-900/40 transition-all duration-500 hover:border-green-500/20 group hover:-translate-y-1">
+                <h3 className="text-sm font-bold text-zinc-200 mb-4 uppercase tracking-wider flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
                   {category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {items.map((skill, i) => (
-                    <span key={i} className="px-3 py-1.5 bg-zinc-900/50 text-zinc-400 text-xs font-mono rounded border border-zinc-800 hover:text-green-400 hover:border-green-500/30 transition-colors cursor-default">
+                    <span key={i} className="px-2.5 py-1 bg-zinc-900 text-zinc-400 text-xs font-mono rounded border border-zinc-800 hover:text-green-400 hover:border-green-500/20 transition-colors cursor-default">
                       {skill}
                     </span>
                   ))}
@@ -436,12 +432,12 @@ const Skills = () => {
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-32 bg-zinc-950 relative">
+    <section id="experience" className="py-32 bg-black relative">
       <div className="max-w-5xl mx-auto px-6">
         <RevealOnScroll>
           <div className="flex items-end justify-between mb-20">
             <div>
-              <h2 className="text-4xl font-bold text-white mb-2">Experience <span className="text-green-500">Log</span></h2>
+              <h2 className="text-4xl font-bold text-white mb-2">Work <span className="text-green-500">Experience</span></h2>
               <p className="text-zinc-500">My timeline of internships and simulations.</p>
             </div>
           </div>
@@ -456,18 +452,19 @@ const Experience = () => {
                 
                 <div className="md:flex gap-12 items-start">
                   <div className="hidden md:block w-[150px] text-right py-1">
-                    <span className="text-sm font-mono text-zinc-500 group-hover:text-green-400 transition-colors">{job.period}</span>
+                    <span className="text-xs font-mono text-zinc-500 group-hover:text-green-400 transition-colors">{job.period}</span>
                   </div>
 
-                  <div className="relative flex-1 bg-gradient-to-br from-zinc-900/50 to-black border border-zinc-800 p-8 rounded-2xl hover:border-green-500/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.05)]">
+                  <div className="relative flex-1 bg-zinc-900/30 border border-zinc-800 p-8 rounded-2xl hover:border-green-500/20 transition-all duration-300 hover:bg-zinc-900/50">
                     {/* Timeline Dot */}
-                    <div className="absolute -left-[37px] top-8 w-3 h-3 rounded-full bg-zinc-800 border-4 border-zinc-950 group-hover:bg-green-500 group-hover:scale-125 transition-all hidden md:block shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+                    <div className="absolute -left-[37px] top-8 w-3 h-3 rounded-full bg-zinc-900 border border-zinc-700 group-hover:border-green-500 group-hover:scale-125 transition-all hidden md:block"></div>
                     
-                    <div className="flex justify-between items-start mb-4">
+                    <div className="flex flex-col sm:flex-row justify-between items-start mb-4">
                       <div>
                         <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">{job.role}</h3>
-                        <div className="text-zinc-400 text-sm mt-1">{job.company} <span className="text-zinc-600 mx-2">•</span> <span className="text-xs border border-green-900/30 text-green-600 px-2 py-0.5 rounded bg-green-900/10">{job.type}</span></div>
+                        <div className="text-zinc-400 text-sm mt-1">{job.company} <span className="text-zinc-600 mx-2">•</span> <span className="text-xs border border-zinc-700 text-zinc-400 px-2 py-0.5 rounded bg-zinc-800">{job.type}</span></div>
                       </div>
+                      <span className="md:hidden text-xs font-mono text-zinc-500 mt-2">{job.period}</span>
                     </div>
                     <p className="text-zinc-400 text-sm leading-relaxed border-t border-zinc-800/50 pt-4 mt-2">
                       {job.description}
@@ -483,14 +480,13 @@ const Experience = () => {
   );
 };
 
-/* --- NEW COMPONENT: EDUCATION --- */
 const Education = () => {
   return (
     <section id="education" className="py-24 bg-black border-t border-zinc-900/50 relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <RevealOnScroll>
           <div className="mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Academic <span className="text-green-500">Record</span></h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Education</h2>
             <div className="h-1 w-20 bg-green-600 rounded-full"></div>
           </div>
         </RevealOnScroll>
@@ -498,15 +494,10 @@ const Education = () => {
         <div className="space-y-8">
           {portfolioData.education.map((edu, idx) => (
             <RevealOnScroll key={idx}>
-              <div className="bg-zinc-900/20 border border-zinc-800 rounded-2xl p-8 hover:border-green-500/30 transition-colors relative overflow-hidden group">
-                {/* Decorative BG icon */}
-                <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <BookOpen className="w-48 h-48 text-green-500" />
-                </div>
-
+              <div className="bg-zinc-900/20 border border-zinc-800 rounded-2xl p-8 hover:border-green-500/20 transition-colors relative overflow-hidden group">
                 <div className="flex flex-col md:flex-row gap-6 relative z-10">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-green-500/10 rounded-xl flex items-center justify-center border border-green-500/20 text-green-500">
+                    <div className="w-16 h-16 bg-zinc-900 rounded-xl flex items-center justify-center border border-zinc-800 text-green-500">
                        <BookOpen className="w-8 h-8" />
                     </div>
                   </div>
@@ -514,14 +505,14 @@ const Education = () => {
                   <div className="flex-1">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
                       <h3 className="text-2xl font-bold text-white">{edu.institution}</h3>
-                      <span className="text-green-500 font-mono text-sm bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20 mt-2 md:mt-0">{edu.period}</span>
+                      <span className="text-green-500 font-mono text-sm bg-green-500/10 px-3 py-1 rounded-full border border-green-500/10 mt-2 md:mt-0">{edu.period}</span>
                     </div>
                     
-                    <h4 className="text-lg text-green-400 mb-4">{edu.degree}</h4>
+                    <h4 className="text-lg text-zinc-300 mb-4">{edu.degree}</h4>
                     
-                    <div className="grid md:grid-cols-2 gap-4 text-sm text-zinc-400 font-mono">
+                    <div className="grid md:grid-cols-2 gap-4 text-sm text-zinc-500 font-mono">
                       <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-zinc-500" />
+                        <MapPin className="w-4 h-4 text-zinc-600" />
                         {edu.location}
                       </div>
                     </div>
@@ -542,10 +533,7 @@ const Education = () => {
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 bg-zinc-950 relative">
-       {/* Background Noise Texture */}
-       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none"></div>
-
+    <section id="projects" className="py-32 bg-black relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <RevealOnScroll>
           <h2 className="text-4xl font-bold text-white mb-16">Featured <span className="text-green-500">Projects</span></h2>
@@ -554,18 +542,13 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {portfolioData.projects.map((project, index) => (
             <RevealOnScroll key={index} className={`delay-${index * 100}`}>
-              <div className="group relative bg-zinc-900/20 border border-zinc-800 rounded-3xl p-8 hover:bg-zinc-900/40 transition-all duration-500 hover:border-green-500/30 overflow-hidden hover:-translate-y-2 flex flex-col h-full">
-                {/* Decoration */}
-                <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
-                   <Terminal className="w-24 h-24 text-green-500/5 -rotate-12" />
-                </div>
-                
+              <div className="group relative bg-zinc-900/20 border border-zinc-800 rounded-2xl p-8 hover:bg-zinc-900/40 transition-all duration-500 hover:border-green-500/20 overflow-hidden flex flex-col h-full hover:shadow-2xl hover:shadow-green-900/5">
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex justify-between items-start mb-6">
                     <div className="w-12 h-12 bg-zinc-900 rounded-xl border border-zinc-800 flex items-center justify-center group-hover:border-green-500/30 group-hover:text-green-500 transition-colors">
                       <Terminal className="w-6 h-6" />
                     </div>
-                    <a href={project.link} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+                    <a href={project.link} target="_blank" rel="noreferrer" className="text-zinc-600 hover:text-white transition-colors">
                       <ExternalLink className="w-5 h-5"/>
                     </a>
                   </div>
@@ -576,14 +559,14 @@ const Projects = () => {
                   </p>
                   
                   <div className="mt-auto">
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {project.tech.split(', ').map((t, i) => (
-                        <span key={i} className="text-xs font-medium text-green-400/80 bg-green-900/10 px-3 py-1 rounded-full border border-green-500/10">
+                        <span key={i} className="text-xs font-medium text-zinc-400 bg-zinc-900 px-3 py-1 rounded-full border border-zinc-800">
                           {t}
                         </span>
                       ))}
                     </div>
-                    <a href={project.link} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-bold text-green-500 hover:text-green-400">
+                    <a href={project.link} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-bold text-white hover:text-green-400 transition-colors">
                       View Source <Github className="w-4 h-4 ml-2" />
                     </a>
                   </div>
@@ -608,13 +591,13 @@ const Certifications = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {portfolioData.certifications.map((cert, index) => (
                     <RevealOnScroll key={index} className={`delay-${index * 100}`}>
-                        <a href={cert.link} target="_blank" rel="noreferrer" className="block h-full bg-zinc-900/40 border border-zinc-800 p-6 rounded-2xl hover:border-green-500/50 hover:bg-zinc-900/60 transition-all group">
-                            <div className="w-10 h-10 bg-green-900/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <FileText className="w-5 h-5 text-green-500" />
+                        <a href={cert.link} target="_blank" rel="noreferrer" className="block h-full bg-zinc-900/20 border border-zinc-800 p-6 rounded-2xl hover:border-green-500/30 hover:bg-zinc-900/40 transition-all group relative overflow-hidden">
+                            <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-zinc-800">
+                                <FileText className="w-6 h-6 text-green-500" />
                             </div>
-                            <h3 className="text-lg font-bold text-gray-200 group-hover:text-green-400 transition-colors mb-2">{cert.name}</h3>
-                            <p className="text-xs text-gray-500 font-mono mb-4">{cert.issuer}</p>
-                            <div className="flex items-center text-xs text-green-500 font-bold mt-auto">
+                            <h3 className="text-lg font-bold text-white group-hover:text-green-400 transition-colors mb-2 leading-snug">{cert.name}</h3>
+                            <p className="text-xs text-zinc-500 font-mono mb-6">{cert.issuer}</p>
+                            <div className="flex items-center text-xs text-green-500 font-bold mt-auto relative z-10 tracking-widest">
                                 VIEW DOCUMENT <ExternalLink className="w-3 h-3 ml-2" />
                             </div>
                         </a>
@@ -641,23 +624,19 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 bg-zinc-950 border-t border-zinc-900/50">
+    <section id="contact" className="py-32 bg-black border-t border-zinc-900/50">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <RevealOnScroll>
-          <h2 className="text-5xl font-bold text-white mb-6">Initialize <span className="text-green-500">Connection</span></h2>
+          <h2 className="text-5xl font-bold text-white mb-6">Get In <span className="text-green-500">Touch</span></h2>
           <p className="text-zinc-400 mb-12 text-lg">
             Ready to secure your infrastructure? I am available for internships and security audits.
           </p>
 
-          <div className="bg-zinc-900/30 backdrop-blur-md border border-zinc-800 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
-            {/* Corner Accents */}
-            <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-green-500/20 rounded-tl-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-green-500/20 rounded-br-3xl"></div>
-
+          <div className="bg-zinc-900/20 backdrop-blur-sm border border-zinc-800 p-8 md:p-12 rounded-3xl relative overflow-hidden">
             <form onSubmit={handleSubmit} className="space-y-6 text-left relative z-10">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Identity</label>
+                  <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Name</label>
                   <input
                     type="text"
                     required
@@ -668,7 +647,7 @@ const Contact = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Frequency</label>
+                  <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Email</label>
                   <input
                     type="email"
                     required
@@ -680,7 +659,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Payload</label>
+                <label className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Message</label>
                 <textarea
                   required
                   rows={4}
@@ -695,11 +674,11 @@ const Contact = () => {
                 disabled={status === 'sending' || status === 'success'}
                 className={`w-full py-4 rounded-xl font-bold tracking-wide transition-all duration-300 transform hover:-translate-y-1 ${
                   status === 'success' 
-                    ? 'bg-green-500 text-black shadow-lg shadow-green-500/20' 
-                    : 'bg-white text-black hover:bg-zinc-200 shadow-lg shadow-white/10'
+                    ? 'bg-green-500 text-black' 
+                    : 'bg-white text-black hover:bg-zinc-200'
                 }`}
               >
-                {status === 'sending' ? 'Transmitting...' : status === 'success' ? 'Transmission Complete' : 'Execute Transmission'}
+                {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message Sent' : 'Send Message'}
               </button>
             </form>
           </div>
@@ -711,11 +690,9 @@ const Contact = () => {
 
 const Footer = () => (
   <footer className="bg-black py-12 border-t border-zinc-900 text-center relative overflow-hidden">
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-green-900 to-transparent"></div>
-    
     <div className="flex items-center justify-center gap-2 mb-6 text-green-900">
-      <Shield className="w-6 h-6 animate-pulse" />
-      <span className="text-xs font-mono tracking-[0.2em]">SECURE CONNECTION ESTABLISHED</span>
+      <Shield className="w-6 h-6" />
+      <span className="text-xs font-mono tracking-[0.2em] text-zinc-600">SECURE PORTFOLIO</span>
     </div>
     <p className="text-zinc-600 text-sm">
       &copy; {new Date().getFullYear()} Shivam Kumar. All protocols secured.
@@ -725,7 +702,7 @@ const Footer = () => (
 
 export default function App() {
   return (
-    <div className="bg-black min-h-screen text-zinc-100 selection:bg-green-500/30 selection:text-green-200">
+    <div className="bg-black min-h-screen text-zinc-100 selection:bg-green-500/30 selection:text-green-200 font-sans">
       <Navigation />
       <Hero />
       <About />
