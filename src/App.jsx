@@ -306,7 +306,7 @@ const Hero = () => {
                 <img 
                   src={portfolioData.personal.profileImage} 
                   alt="Shivam Kumar" 
-                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
                   onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400"; }} // Fallback if image not found
                 />
                 {/* Scanline Effect Overlay */}
